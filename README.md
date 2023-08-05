@@ -51,3 +51,10 @@ macOS Ventura on Acer Nitro 5 AN515-54 with OpenCore 0.9.3 EFI folder.
 To disable CFG Lock, follow [this](https://www.reddit.com/r/hackintosh/comments/hz2rtm/cfg_lockunlocking_alternative_method/) guide. Note that you'll be modifying the BIOS, so be very careful or you could end up bricking your device. If you're not sure about something, do NOT do it.
 
 After following the guide, disable Kernel -> Quirks -> AppleXcpmCfgLock and you're done.
+
+## How to Fix "Not Enough Disk Space to Copy EFI" error
+```bash
+sudo -s
+diskutil
+newfs_msdos -v EFI /dev/disk1s1
+```
